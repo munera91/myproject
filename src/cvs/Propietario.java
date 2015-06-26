@@ -10,7 +10,7 @@ class Propietario {
     Local local;
     String Pass;
 
-    public static ArrayList<Propietario> propietarios = new ArrayList<>();
+    public static lista<Propietario> propietarios = new lista<>();
     
     public static Propietario propietariologueado;
 
@@ -28,8 +28,8 @@ class Propietario {
     
     public static Propietario getPropietario(Local localAbuscar) {
         for (int i = 0; i < propietarios.size(); i++) {
-            if(propietarios.get(i).local.numerodelocal == localAbuscar.numerodelocal) {
-                return propietarios.get(i);
+            if(propietarios.get(i).info.local.numerodelocal == localAbuscar.numerodelocal) {
+                return propietarios.get(i).info;
             }
         }
         return null;
