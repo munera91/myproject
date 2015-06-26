@@ -1,7 +1,5 @@
 package cvs;
 
-import java.util.ArrayList;
-
 public class Administrador {
 
     String user;
