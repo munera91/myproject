@@ -1,7 +1,5 @@
 package cvs;
 
-import java.util.ArrayList;
-
 class Propietario {
 
     String cedula;
@@ -36,9 +34,9 @@ class Propietario {
     }
     
     public static boolean loguearpropietario(String correo, String contrasena) {
-        for (Propietario propietario : propietarios) {
-            if (propietario.nombre.equals(correo) && propietario.Pass.equals(contrasena)) {
-                propietariologueado = propietario; //Si coincide el correo y pass, se pone como usuario logueado el que coincidió
+        for (int i = 0; i < propietarios.size(); i++) {
+            if (propietarios.get(i).info.nombre.equals(correo) && propietarios.get(i).info.Pass.equals(contrasena)) {
+                propietariologueado = propietarios.get(i).info; //Si coincide el correo y pass, se pone como usuario logueado el que coincidió
                 return true;
             }
         }
