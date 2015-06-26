@@ -1,0 +1,11 @@
+C:\Users\K-milo\Desktop\Hungriest\src\Administrador.java
+C:\Users\K-milo\Desktop\Hungriest\src\ClienteRegistrado.java
+C:\Users\K-milo\Desktop\Hungriest\src\CrearUsuario.java
+C:\Users\K-milo\Desktop\Hungriest\src\GestionarLocales.java
+C:\Users\K-milo\Desktop\Hungriest\src\GestionarPropietarios.java
+C:\Users\K-milo\Desktop\Hungriest\src\Local.java
+C:\Users\K-milo\Desktop\Hungriest\src\LoginFrame.java
+C:\Users\K-milo\Desktop\Hungriest\src\Menuppaladministracion.java
+C:\Users\K-milo\Desktop\Hungriest\src\Micuenta.java
+C:\Users\K-milo\Desktop\Hungriest\src\Propietario.java
+C:\Users\K-milo\Desktop\Hungriest\src\Usuario.java
