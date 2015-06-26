@@ -2,10 +2,7 @@ package cvs;
 
 import java.awt.Color;
 import java.awt.Container;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -17,7 +14,6 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -113,120 +109,6 @@ public class GestionarPropietarios extends JFrame {
         botonsalir = new JButton("Salir");
         botonsalir.setBounds(110, 220, 80, 30);
         panelAbajo.add(botonsalir);
-        
-
-//        GridBagConstraints gbc = new GridBagConstraints();
-//
-//        gbc.gridx = 0;
-//        gbc.gridy = 0;
-//        gbc.gridwidth = 3;
-//        gbc.gridheight = 1;
-//        gbc.weightx = 1.0;
-//        gbc.weighty = 1.0;
-//        gbc.fill = GridBagConstraints.BOTH;
-//        gbc.insets = new Insets(5, 10, 5, 10); //Dar espaciado y margenes
-//        panelAbajo.add(labelagregaroeditarprop, gbc);
-        
-        
-//
-//        gbc.gridx = 0;
-//        gbc.gridy = 1;
-//        gbc.gridwidth = 3;
-//        gbc.gridheight = 1;
-//        gbc.weightx = 1.0;
-//        gbc.weighty = 1.0;
-//        gbc.fill = GridBagConstraints.BOTH;
-//        panelAbajo.add(textoagregarpropietario, gbc);
-//
-//        gbc.gridx = 0;
-//        gbc.gridy = 2;
-//        gbc.gridwidth = 3;
-//        gbc.gridheight = 1;
-//        gbc.weightx = 1.0;
-//        gbc.weighty = 1.0;
-//        gbc.fill = GridBagConstraints.BOTH;
-//        panelAbajo.add(labelcedula, gbc);
-//
-//        gbc.gridx = 0;
-//        gbc.gridy = 3;
-//        gbc.gridwidth = 3;
-//        gbc.gridheight = 1;
-//        gbc.weightx = 1.0;
-//        gbc.weighty = 1.0;
-//        gbc.fill = GridBagConstraints.BOTH;
-//        panelAbajo.add(textocedula, gbc);
-//
-//        gbc.gridx = 0;
-//        gbc.gridy = 4;
-//        gbc.gridwidth = 3;
-//        gbc.gridheight = 1;
-//        gbc.weightx = 1.0;
-//        gbc.weighty = 1.0;
-//        gbc.fill = GridBagConstraints.BOTH;
-//        panelAbajo.add(labelcelular, gbc);
-//
-//        gbc.gridx = 0;
-//        gbc.gridy = 5;
-//        gbc.gridwidth = 3;
-//        gbc.gridheight = 1;
-//        gbc.weightx = 1.0;
-//        gbc.weighty = 1.0;
-//        gbc.fill = GridBagConstraints.BOTH;
-//        panelAbajo.add(textocelular, gbc);
-//
-//        gbc.gridx = 2;
-//        gbc.gridy = 6;
-//        gbc.gridwidth = 1;
-//        gbc.gridheight = 1;
-//        gbc.weightx = 1.0;
-//        gbc.weighty = 2.0;
-//        gbc.fill = GridBagConstraints.BOTH;
-//        panelAbajo.add(botonguardar, gbc);
-//
-//        gbc.gridx = 3;
-//        gbc.gridy = 6;
-//        gbc.gridwidth = 1;
-//        gbc.gridheight = 1;
-//        gbc.weightx = 1.0;
-//        gbc.weighty = 2.0;
-//        gbc.fill = GridBagConstraints.BOTH;
-//        panelAbajo.add(botoneditar, gbc);
-//
-//        gbc.gridx = 4;
-//        gbc.gridy = 6;
-//        gbc.gridwidth = 1;
-//        gbc.gridheight = 1;
-//        gbc.weightx = 1.0;
-//        gbc.weighty = 2.0;
-//        gbc.fill = GridBagConstraints.BOTH;
-//        panelAbajo.add(botoneliminar, gbc);
-//
-//        gbc.gridx = 5;
-//        gbc.gridy = 6;
-//        gbc.gridwidth = 1;
-//        gbc.gridheight = 1;
-//        gbc.weightx = 1.0;
-//        gbc.weighty = 2.0;
-//        gbc.fill = GridBagConstraints.BOTH;
-//        panelAbajo.add(botonactualizar, gbc);
-//
-//        gbc.gridx = 3;
-//        gbc.gridy = 7;
-//        gbc.gridwidth = 1;
-//        gbc.gridheight = 1;
-//        gbc.weightx = 1.0;
-//        gbc.weighty = 1.0;
-//        gbc.fill = GridBagConstraints.BOTH;
-//        panelAbajo.add(botonatras, gbc);
-//
-//        gbc.gridx = 4;
-//        gbc.gridy = 7;
-//        gbc.gridwidth = 1;
-//        gbc.gridheight = 1;
-//        gbc.weightx = 1.0;
-//        gbc.weighty = 1.0;
-//        gbc.fill = GridBagConstraints.BOTH;
-//        panelAbajo.add(botonsalir, gbc);
 
         botonatras.addMouseListener(new MouseListener() {
 
@@ -291,9 +173,9 @@ public class GestionarPropietarios extends JFrame {
                 long celular = Long.parseLong(textocelular.getText());
                 
                 for (int i = 0; i < Propietario.propietarios.size(); i++) {
-                    if(Propietario.propietarios.get(i).cedula.equals(cedula)) {
-                        Propietario.propietarios.get(i).nombre = nombre;
-                        Propietario.propietarios.get(i).celular = celular;
+                    if(Propietario.propietarios.get(i).info.cedula.equals(cedula)) {
+                        Propietario.propietarios.get(i).info.nombre = nombre;
+                        Propietario.propietarios.get(i).info.celular = celular;
                         actualizar();
                         break;
                     }
@@ -310,7 +192,7 @@ public class GestionarPropietarios extends JFrame {
                             "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
                     int indice = tabla.getSelectedRow();
-                    Propietario.propietarios.remove(indice);
+                    Propietario.propietarios.borrar(indice);
                     actualizar();
                     borrartodo();
                 }
@@ -366,7 +248,7 @@ public class GestionarPropietarios extends JFrame {
         String[] encabezados = new String[]{"Cedula", "Nombre", "# local", "tel. local", "celular"};
         String[][] datos = new String[Propietario.propietarios.size()][5];
         for (int i = 0; i < Propietario.propietarios.size(); i++) { //Recorrer todo lso propietarios
-            Propietario prop = Propietario.propietarios.get(i);
+            Propietario prop = Propietario.propietarios.get(i).info;
             if (prop.local != null) { //Si tiene local
                 datos[i] = new String[]{prop.cedula,
                     prop.nombre,

@@ -1,8 +1,7 @@
 package cvs;
 
+import static cvs.Propietario.propietarios;
 import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -133,8 +132,8 @@ public class GestionarLocales extends JFrame {
         panelDerecho.add(propietarioactual);
 
         comboPropietarioactual = new JComboBox<>();
-        for (Propietario propietario : Propietario.propietarios) {
-            comboPropietarioactual.addItem(propietario);
+        for (int i = 0; i < propietarios.size(); i++) {
+            comboPropietarioactual.addItem(propietarios.get(i).info);
         }
         panelDerecho.add(comboPropietarioactual);
         
