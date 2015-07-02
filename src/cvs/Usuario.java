@@ -1,8 +1,5 @@
 package cvs;
 
-import static cvs.Propietario.propietarios;
-import java.util.ArrayList;
-
 class Usuario {
 
     String tipoDocumento;
@@ -15,10 +12,8 @@ class Usuario {
     String genero;
     String contrasena;
 
-    public static ArrayList<Usuario> usuarios = new ArrayList<>();
-    
-    
-    
+    public static lista<Usuario> usuarios = new lista<>();
+
     public static Usuario usuarioLogueado;
 
     public Usuario(String tipoDocumento, int documento, String apellido,
@@ -36,9 +31,9 @@ class Usuario {
     }
 
     public static boolean loguearUsuario(String correo, String contrasena) {
-        for (Usuario usuario : usuarios) {
-            if (usuario.correo.equals(correo) && usuario.contrasena.equals(contrasena)) {
-                usuarioLogueado = usuario; //Si coincide el correo y pass, se pone como usuario logueado el que coincidió
+        for (int i = 0; i < usuarios.size(); i++) {
+            if (usuarios.get(i).info.correo.equals(correo) && usuarios.get(i).info.contrasena.equals(contrasena)) {
+                usuarioLogueado = usuarios.get(i).info; //Si coincide el correo y pass, se pone como usuario logueado el que coincidió
                 return true;
             }
         }

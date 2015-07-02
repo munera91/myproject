@@ -24,7 +24,6 @@ import javax.swing.event.ListSelectionListener;
 
 public class GestionarLocales extends JFrame {
 
-    
     JPanel panelIzquierdo, panelDerecho;
     JLabel labellistadodelocales;
     JButton botoneliminarlocal;
@@ -45,8 +44,7 @@ public class GestionarLocales extends JFrame {
     JScrollPane panelScroll;
 
     public GestionarLocales() {
-        
-        
+
         setTitle("Gestionar Locales");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(800, 600);
@@ -54,18 +52,13 @@ public class GestionarLocales extends JFrame {
         setVisible(true);
         ImageIcon icono = new ImageIcon("../Ressources/icon.png");
         this.setIconImage(icono.getImage());
-        
-        
 
         Container contentpane = getContentPane();
         contentpane.setLayout(new GridLayout(1, 2));
 
         panelIzquierdo = new PanelImagen8();
         panelIzquierdo.setLayout(null);
-        
-        
-        
-        
+
         Border padding = BorderFactory.createEmptyBorder(5, 40, 30, 40);
 //        panelIzquierdo.setBorder(padding);
 
@@ -98,7 +91,7 @@ public class GestionarLocales extends JFrame {
                     JOptionPane.showMessageDialog(null, "No hay nada seleccionado",
                             "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
-                    Local.locales.remove(localSelected);
+                    Local.locales.borrarNodo(localSelected);
                     actualizar();
                 }
             }
@@ -136,8 +129,6 @@ public class GestionarLocales extends JFrame {
             comboPropietarioactual.addItem(propietarios.get(i).info);
         }
         panelDerecho.add(comboPropietarioactual);
-        
-        
 
         tipodecontrato = new JLabel("Tipo de Contrato");
         panelDerecho.add(tipodecontrato);
@@ -172,15 +163,14 @@ public class GestionarLocales extends JFrame {
                 Propietario propietario = (Propietario) comboPropietarioactual.getSelectedItem();
                 boolean esta = false;
                 for (int i = 0; i < Local.locales.size(); i++) {
-                    if (Local.locales.get(i).numerodelocal == num) {
+                    if (Local.locales.get(i).info.numerodelocal == num) {
                         esta = true;
-                        Local.locales.get(i).nombredelocal = nombre; //Editarlo
-                        Local.locales.get(i).tipocontrato = tipoContrato;
-                        propietario.local = Local.locales.get(i);
-                        
+                        Local.locales.get(i).info.nombredelocal = nombre; //Editarlo
+                        Local.locales.get(i).info.tipocontrato = tipoContrato;
+                        propietario.local = Local.locales.get(i).info;
                         break;
                     }
-                    
+
                 }
 //listaLocales.getSelectedIndex() //Devuelve el indice seleccionado
                 if (!esta) { //Si no está se agrega
@@ -237,19 +227,17 @@ public class GestionarLocales extends JFrame {
             }
         });
     }
-    
-    
 
     void actualizar() {
         DefaultListModel model = new DefaultListModel();
         for (int i = 0; i < Local.locales.size(); i++) { //Recorrer todo los locales
-            Local local = Local.locales.get(i);
+            Local local = Local.locales.get(i).info;
             model.addElement(local);
         }
         listaLocales.setModel(model);
     }
-    
-    void limpiar(){
+
+    void limpiar() {
         textoNumeroLocal.setText("");
         textonombredelocal.setText("");
     }

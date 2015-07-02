@@ -74,7 +74,38 @@ public class lista<T> {
 
         return null;
     }
-    
+
+    public void borrarNodo(T e) {
+        Nodo t = cab;
+        while (t != null) {
+            if (cab == e) {
+                if (cab == cola) {
+                    // Borrar unico nodo de la lista
+                    cab = cola = null;
+                } else {
+                    if (cab == t) {
+                        // Borrar el primer nodo de la lista
+                        cab = cab.sig;
+                        cab.ant = null;
+                    } else {
+                        if (cola == t) {
+                            // Borrar el último nodo de la lista
+                            cola = cola.ant;
+                            cola.sig = null;
+                        } else {
+                            // Borrar nodo intermedio
+                            (t.ant).sig = t.sig;
+                            (t.sig).ant = t.ant;
+                        }
+                    }
+                }
+            }
+            t = t.sig;
+
+        }
+       
+    }
+
     public Nodo<T> borrar(int i) {
         Nodo t = cab;
         int cont = 0;
@@ -82,25 +113,25 @@ public class lista<T> {
         while (t != null) {
             if (cont == i) {
                 if (cab == cola) {
-                // Borrar unico nodo de la lista
-                cab = cola = null;
-            } else {
-                if (cab == t) {
-                    // Borrar el primer nodo de la lista
-                    cab = cab.sig;
-                    cab.ant = null;
+                    // Borrar unico nodo de la lista
+                    cab = cola = null;
                 } else {
-                    if (cola == t) {
-                        // Borrar el último nodo de la lista
-                        cola = cola.ant;
-                        cola.sig = null;
+                    if (cab == t) {
+                        // Borrar el primer nodo de la lista
+                        cab = cab.sig;
+                        cab.ant = null;
                     } else {
-                        // Borrar nodo intermedio
-                        (t.ant).sig = t.sig;
-                        (t.sig).ant = t.ant;
+                        if (cola == t) {
+                            // Borrar el último nodo de la lista
+                            cola = cola.ant;
+                            cola.sig = null;
+                        } else {
+                            // Borrar nodo intermedio
+                            (t.ant).sig = t.sig;
+                            (t.sig).ant = t.ant;
+                        }
                     }
                 }
-            }
             }
             cont = cont + 1;
             t = t.sig;
@@ -109,7 +140,5 @@ public class lista<T> {
 
         return null;
     }
-    
-    
 
 }

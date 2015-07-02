@@ -1,7 +1,5 @@
 package cvs;
 
-import java.util.ArrayList;
-
 class Local {
 
     int numerodelocal;
@@ -9,7 +7,7 @@ class Local {
     String nombredelocal;
     String tipodecontrato;
 
-    public static ArrayList<Local> locales = new ArrayList<>();
+    public static lista<Local> locales = new lista<>();
 
     public Local(int numerodelocal, String tipocontrato, String nombredelocal) {
         this.numerodelocal = numerodelocal;

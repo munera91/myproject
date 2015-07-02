@@ -334,9 +334,9 @@ public class CrearUsuario extends JFrame {
         if (removerusuario.equals(Usuario.usuarioLogueado.contrasena)) {
 
             for (int i = 0; i < Usuario.usuarios.size(); i++) {
-                Usuario usr = Usuario.usuarios.get(i);
+                Usuario usr = Usuario.usuarios.get(i).info;
                 if (Usuario.usuarioLogueado.documento == usr.documento) {
-                    Usuario.usuarios.remove(i);
+                    Usuario.usuarios.borrar(i);
                     JOptionPane.showMessageDialog(null, "Su cuenta ha sido eliminada",
                             "Informacion", JOptionPane.INFORMATION_MESSAGE);
                     new PrincipalWindow(false);
