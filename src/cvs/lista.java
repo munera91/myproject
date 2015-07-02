@@ -78,32 +78,39 @@ public class lista<T> {
     public void borrarNodo(T e) {
         Nodo t = cab;
         while (t != null) {
-            if (cab == e) {
-                if (cab == cola) {
-                    // Borrar unico nodo de la lista
-                    cab = cola = null;
+
+            if (cab == cola) {
+                // Borrar unico nodo de la lista
+                cab = cola = null;
+            } else {
+                if (cab.info == e) {
+                    // Borrar el primer nodo de la lista
+                    cab = cab.sig;
+                    cab.ant = null;
+                    break;
                 } else {
-                    if (cab == t) {
-                        // Borrar el primer nodo de la lista
-                        cab = cab.sig;
-                        cab.ant = null;
+                    if (cola.info == e) {
+                        // Borrar el último nodo de la lista
+                        cola = cola.ant;
+                        cola.sig = null;
+                        break;
                     } else {
-                        if (cola == t) {
-                            // Borrar el último nodo de la lista
-                            cola = cola.ant;
-                            cola.sig = null;
-                        } else {
+                        if (e == t.info) {
                             // Borrar nodo intermedio
                             (t.ant).sig = t.sig;
                             (t.sig).ant = t.ant;
+                            break;
+
                         }
+
                     }
                 }
             }
-            t = t.sig;
 
+            t = t.sig;
+            
         }
-       
+
     }
 
     public Nodo<T> borrar(int i) {
