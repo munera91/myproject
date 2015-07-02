@@ -1,6 +1,5 @@
 package cvs;
 
-import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -39,7 +38,6 @@ public class Menuppaladministracion extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
         setLayout(null);
-        
 
         Font fuentearial = new Font("Arial", Font.BOLD, 23);
         Map atributos = fuentearial.getAttributes();
@@ -92,8 +90,6 @@ public class Menuppaladministracion extends JFrame {
         labelGestionarlocales.setIcon(new ImageIcon(getClass().getResource("/cvs/botonlocales.png")));
         labelGestionarlocales.setBounds(100, 300, 257, 152);
         labelGestionarlocales.addMouseListener(new MouseListener() {
-            
-            
 
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -122,7 +118,7 @@ public class Menuppaladministracion extends JFrame {
             }
         });
         add(labelGestionarlocales);
-        
+
         labelGestionarEvento = new JLabel("Gestionar Eventos");
         labelGestionarEvento.setIcon(new ImageIcon(getClass().getResource("/cvs/botoneventos.png")));
         labelGestionarEvento.setBounds(450, 150, 257, 152);
@@ -155,8 +151,7 @@ public class Menuppaladministracion extends JFrame {
             }
         });
         add(labelGestionarEvento);
-       
-        
+
         labelcambiarpassword = new JLabel();
         labelcambiarpassword.setIcon(new ImageIcon(getClass().getResource("/cvs/password.png")));
         labelcambiarpassword.setHorizontalAlignment(CENTER);
@@ -175,14 +170,14 @@ public class Menuppaladministracion extends JFrame {
                         Administrador.admin.password = passN;
                         JOptionPane.showMessageDialog(null, "Contraseña cambiada correctamente",
                                 "Aviso", JOptionPane.INFORMATION_MESSAGE);
-                        
+
                     } else {
                         JOptionPane.showMessageDialog(null, "No coincide las contraseñas",
                                 "Error", JOptionPane.ERROR_MESSAGE);
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "La contraseña es incorrecta",
-                    "Error", JOptionPane.ERROR_MESSAGE);
+                            "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
 
@@ -214,10 +209,10 @@ public class Menuppaladministracion extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 JOptionPane.showMessageDialog(null, "La Sesion ha finalizado",
-                            "Informacion", JOptionPane.INFORMATION_MESSAGE);
+                        "Informacion", JOptionPane.INFORMATION_MESSAGE);
                 new PrincipalWindow(false);
                 dispose();
-                
+
             }
 
             @Override
