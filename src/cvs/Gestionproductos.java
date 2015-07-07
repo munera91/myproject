@@ -3,7 +3,6 @@ package cvs;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -11,25 +10,26 @@ import java.awt.event.MouseListener;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Map;
-import javax.swing.BorderFactory;
-import javax.swing.DefaultListModel;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 
-public class Gestionproductos extends JFrame {
+/**
+ * Clase Gestionar productos, en esta clase crean, eliminan y actualizan los
+ * productos al ingresar un usuario y una contraseña el software reconoce cual
+ * es el usuario y carga los productos del mismo.
+ *
+ * @author Camilo Munera
+ * @version 05/07/2015
+ */
+public final class Gestionproductos extends JFrame {
 
     JPanel panelIzquierdo, panelDerecho, panelproducto1, panelproducto2, panelproducto3;
     JButton botonatras;
@@ -61,12 +61,9 @@ public class Gestionproductos extends JFrame {
         setVisible(true);
 
         Container contentpane = getContentPane();
-//        contentpane.setLayout(new GridLayout(1, 2));
+
         contentpane.setLayout(null);
 
-        //panelIzquierdo = new JPanel(new GridLayout(9, 1, 0, 6));
-        //Border padding = BorderFactory.createEmptyBorder(5, 40, 30, 40);
-        //panelIzquierdo.setBorder(padding);
         JPanel Pgestionproductos = new PanelImagen3();
         Pgestionproductos.setLayout(null);
         Pgestionproductos.setBounds(0, 0, 400, 600);
@@ -81,24 +78,23 @@ public class Gestionproductos extends JFrame {
 
         Font fuentearial = new Font("Arial", Font.BOLD, 18);
         Map atributos = fuentearial.getAttributes();
-        
+
         Font fuentearialpeque = new Font("Arial", Font.PLAIN, 16);
         Map atributos2 = fuentearialpeque.getAttributes();
-        
+
         labelbienvenido = new JLabel("Bienvenido");
         labelbienvenido.setFont(fuentearial);
         labelbienvenido.setForeground(Color.WHITE);
         labelbienvenido.setBounds(10, 10, 150, 30);
         Pgestionproductos.add(labelbienvenido);
-        
-        
-        nombrepropietario =new JLabel(Propietario.propietariologueado.nombre);
+
+        nombrepropietario = new JLabel(Propietario.propietariologueado.nombre);
         nombrepropietario.setFont(fuentearial);
         nombrepropietario.setForeground(Color.WHITE);
         nombrepropietario.setBounds(10, 30, 150, 30);
         Pgestionproductos.add(nombrepropietario);
-        
-        labelcerrarsesion= new JLabel("<HTML><U>Cerrar Sesion<U></HTML>");
+
+        labelcerrarsesion = new JLabel("<HTML><U>Cerrar Sesion<U></HTML>");
         labelcerrarsesion.setFont(fuentearialpeque.deriveFont(atributos2));
         labelcerrarsesion.setForeground(Color.WHITE);
         labelcerrarsesion.setBounds(10, 40, 150, 40);
@@ -107,10 +103,10 @@ public class Gestionproductos extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 JOptionPane.showMessageDialog(null, "La Sesion ha finalizado",
-                            "Informacion", JOptionPane.INFORMATION_MESSAGE);
+                        "Informacion", JOptionPane.INFORMATION_MESSAGE);
                 new PrincipalWindow(false);
                 dispose();
-                
+
             }
 
             @Override
@@ -134,7 +130,6 @@ public class Gestionproductos extends JFrame {
             }
         });
         Pgestionproductos.add(labelcerrarsesion);
-        
 
         labelproducto = new JLabel("Nombre del Producto");
         labelproducto.setBounds(70, 80, 200, 40);
@@ -187,22 +182,8 @@ public class Gestionproductos extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFileChooser selector = new JFileChooser();
-                int estado = selector.showOpenDialog(null);
-                File archivoelegido = selector.getSelectedFile();
-                rutafoto = archivoelegido.getPath();
-                if (archivoelegido.exists()) {
-                    System.out.println("bien");
-                } else {
-                    System.out.println("no bien");
-                }
-//                if (estado == JFileChooser.APPROVE_OPTION);
-//                {
-//                    ImageIcon imagen = new ImageIcon(rutafoto);
-//                    JLabel etiqueta = new JLabel(imagen);
-//                    panelproducto1.add(etiqueta);
-//
-//                }
+
+                CargarFotografias();
 
             }
         });
@@ -246,36 +227,67 @@ public class Gestionproductos extends JFrame {
         Pgestionproductos.add(botonguardar);
         botonguardar.addActionListener(new ActionListener() {
 
+            @Override
             public void actionPerformed(ActionEvent e) {
 
-                String nombreproducto = textoproducto.getText();
-                String descripproducto = textodescripcion.getText();
-                String precioproducto = textoprecioproducto.getText();
-                String categoriaproducto = (String) comboCategoria.getSelectedItem();
-                if (productoEdicion == null) {
-                    Producto Pd = new Producto(rutafoto, nombreproducto, descripproducto, categoriaproducto, precioproducto);
-                    Producto.Productos.add(Pd);
-                    JOptionPane.showMessageDialog(null, "Producto Agregado Correctamente",
-                            "Informacion", JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    productoEdicion.nombreproducto = nombreproducto;
-                    productoEdicion.descripcionproducto = descripproducto;
-                    productoEdicion.precioproducto = precioproducto;
-                    productoEdicion.Categoria = categoriaproducto;
-                    JOptionPane.showMessageDialog(null, "Producto Editado Correctamente",
-                            "Informacion", JOptionPane.INFORMATION_MESSAGE);
-                }
-                pegarProductos();
-                borrartodo();
-                productoEdicion = null;
+                Guardar();
             }
         });
 
-        //En el evento boton guardar, guardarlo en l arrrelo  y llamar a pegarProductos();
         panelDerecho.setLayout(null);
         System.out.println(Producto.Productos.size());
         pegarProductos();
     }
+    
+    /**
+     *  Este void me permite cargar las imagenes al crear o editar los productos
+     */
+    
+    void CargarFotografias() {
+        JFileChooser selector = new JFileChooser();
+        int estado = selector.showOpenDialog(null);
+        File archivoelegido = selector.getSelectedFile();
+        rutafoto = archivoelegido.getPath();
+        if (archivoelegido.exists()) {
+            JOptionPane.showMessageDialog(null, "Se ha cargado la fotografia",
+                    "Informacion", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "No se ha cargado la fotografia",
+                    "Informacion", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    /**
+     * Void Guardar almacena o edita los productos en la lista Productos
+     */
+
+    void Guardar() {
+        String nombreproducto = textoproducto.getText();
+        String descripproducto = textodescripcion.getText();
+        String precioproducto = textoprecioproducto.getText();
+        String categoriaproducto = (String) comboCategoria.getSelectedItem();
+        if (productoEdicion == null) {
+            Producto Pd = new Producto(rutafoto, nombreproducto, descripproducto, categoriaproducto, precioproducto);
+            Producto.Productos.add(Pd);
+            JOptionPane.showMessageDialog(null, "Producto Agregado Correctamente",
+                    "Informacion", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            productoEdicion.nombreproducto = nombreproducto;
+            productoEdicion.descripcionproducto = descripproducto;
+            productoEdicion.precioproducto = precioproducto;
+            productoEdicion.Categoria = categoriaproducto;
+            JOptionPane.showMessageDialog(null, "Producto Editado Correctamente",
+                    "Informacion", JOptionPane.INFORMATION_MESSAGE);
+        }
+        pegarProductos();
+        borrartodo();
+        productoEdicion = null;
+    }
+    
+    /**
+     * Void Pegar Productos, remueve todos los productos que hay en el panel y agrega
+     * los productos que hay en la lista Productos
+     */
 
     void pegarProductos() {
         panelDerecho.removeAll();
@@ -285,10 +297,14 @@ public class Gestionproductos extends JFrame {
             JPanel panel = new ProductoInfoPanel(productos.get(i), this);
             panelDerecho.add(panel);
             panel.setBounds(0, i * 150, panelDerecho.getWidth(), 150);
-            
+
         }
 
     }
+    
+    /**
+     * borrartodo, pone todos los campos en blanco
+     */
 
     void borrartodo() {
         textoproducto.setText("");

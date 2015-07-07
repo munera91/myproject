@@ -415,8 +415,7 @@ public class PrincipalWindow extends JFrame {
     public static void main(String[] args) {
 
         
-        //Local.locales.add(new Local(301, "3 Meses",  "Leonisa"));
-        
+                
         Producto.Productos.add(new Producto("C:\\aimages\\zapatodama.jpg", "Zapatos Dama", "Color Rosa", "Ropa", "50.000"));
         Producto.Productos.add(new Producto("C:\\aimages\\camisa.jpg", "Camisa Hombre", "Color Blanco Azul, Tallas M,L", "Ropa", "25.000"));
         

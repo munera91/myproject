@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
@@ -19,11 +18,18 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+/**
+ * Esta clase me permite crear un nuevo usuario o editar uno existente
+ *
+ * @version 15/05/2015
+ * @author Victor Dorado
+ *
+ */
 public class CrearUsuario extends JFrame {
 
-    JLabel labeltipodocumento;
-    JLabel labeldocumento;
-    JLabel labelapellidos;
+    private JLabel labeltipodocumento;
+    private JLabel labeldocumento;
+    private JLabel labelapellidos;
     JLabel labelnombre;
     JLabel labeltelefono;
     JLabel labelcelular;
@@ -48,6 +54,12 @@ public class CrearUsuario extends JFrame {
     JComboBox combo1;
     boolean editando;
 
+    /**
+     * Constructor Crear Usuario
+     *
+     * @param editando si editando es true es porque el usuario ya existe y los
+     * datos seran modificados, si es false se crea un nuevo usuario.
+     */
     public CrearUsuario(boolean editando) {
         if (editando == true) {
             setTitle("Modificar mis Datos");
@@ -155,15 +167,14 @@ public class CrearUsuario extends JFrame {
                             "Error", JOptionPane.ERROR_MESSAGE);
                 }
                 String genero = (String) comboGenero.getSelectedItem();
-                
+
                 if (textoMail.getText().matches("^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\\.[a-zA-Z]{2,4}$") && (textoPass.getText().length() == 8)) {
 
                     if (!editando) {
                         Usuario us = new Usuario(tipoDocumento, documento, apellido,
                                 nombre, telefono, celular, correo, genero, contrasena);
                         Usuario.usuarios.add(us); //Agregar al array
-                        
-                        
+
                         JOptionPane.showMessageDialog(null, "Se ha Registrado con exito, Inice Sesion para acceder",
                                 "Informacion", JOptionPane.INFORMATION_MESSAGE);
                         new LoginFrame();
@@ -227,15 +238,13 @@ public class CrearUsuario extends JFrame {
 
             @Override
             public void mouseClicked(MouseEvent ev) {
-                if(!editando){
-                 new PrincipalWindow(false);
-                 dispose();   
+                if (!editando) {
+                    new PrincipalWindow(false);
+                    dispose();
+                } else {
+                    new PrincipalWindow(true);
+                    dispose();
                 }
-                else{
-                  new PrincipalWindow(true);
-                 dispose();     
-                }
-                
 
             }
 
@@ -299,9 +308,14 @@ public class CrearUsuario extends JFrame {
             cargarDatos();
             botoncrearusuario.setText("Modificar");
         }
-    }
+    }  //fin constructor
 
-    void cargarDatos() {
+    /**
+     * Metodo para cargar la informacion de un usuario ya registrado, llena
+     * todos los campos del formulario y permite editar la informacion del
+     * mismo.
+     */
+    private void cargarDatos() {
         for (int i = 0; i < comboTipodocumento.getItemCount(); i++) { //buscar entre los items del combobox 
             if (((String) comboTipodocumento.getItemAt(i)).equals(Usuario.usuarioLogueado.tipoDocumento)) {
                 comboTipodocumento.setSelectedIndex(i);
@@ -327,7 +341,10 @@ public class CrearUsuario extends JFrame {
 
     }
 
-    void eliminarusuario() {
+    /**
+     * Metodo para eliminar un usuario que se encuentre registrado
+     */
+    private void eliminarusuario() {
 
         String removerusuario = JOptionPane.showInputDialog("Introduzca su contraseña");
 
@@ -352,7 +369,5 @@ public class CrearUsuario extends JFrame {
         }
     }
 
-    public static void main(String[] arg) {
-        new CrearUsuario(false);
-    }
+   
 }

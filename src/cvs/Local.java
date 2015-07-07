@@ -1,5 +1,11 @@
 package cvs;
 
+/**
+ * Clase Local almacena los locales en la lista, local
+ * @author Santiago Llano
+ * 04/07/2015
+ */
+
 class Local {
 
     int numerodelocal;
@@ -15,6 +21,11 @@ class Local {
         this.nombredelocal = nombredelocal;
            
     }
+    
+    /**
+     * toString
+     * @return retorna el local, (Numero y nombre de local)
+     */
     
     public String toString() {
         return "Local " + numerodelocal + " (" + nombredelocal + ")";

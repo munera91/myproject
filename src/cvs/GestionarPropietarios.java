@@ -19,6 +19,12 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ * Esta clase me permite crear propietarios
+ * @version 27/03/2015
+ * @author Santiago Llano
+ */
+
 public class GestionarPropietarios extends JFrame {
 
     JScrollPane panelArriba;

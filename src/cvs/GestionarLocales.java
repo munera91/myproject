@@ -22,6 +22,12 @@ import javax.swing.border.Border;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+/**
+ * Esta clase me permite Crear, Editar, Eliminar y listar locales
+ * @version 05/04/2015
+ * @author Santiago Llano
+ */
+
 public class GestionarLocales extends JFrame {
 
     JPanel panelIzquierdo, panelDerecho;
@@ -42,6 +48,12 @@ public class GestionarLocales extends JFrame {
     JButton botonsalir;
     JList<Local> listaLocales;
     JScrollPane panelScroll;
+    
+    /**
+     * Constructor Gestionar Locales
+     * cuenta con dos paneles en el panel izquierdo se visualiza la informacion 
+     * agregada en el panel derecho
+     */
 
     public GestionarLocales() {
 
@@ -60,8 +72,6 @@ public class GestionarLocales extends JFrame {
         panelIzquierdo.setLayout(null);
 
         Border padding = BorderFactory.createEmptyBorder(5, 40, 30, 40);
-//        panelIzquierdo.setBorder(padding);
-
         panelScroll = new JScrollPane();
         listaLocales = new JList<>();
         panelScroll.setViewportView(listaLocales);
@@ -172,7 +182,7 @@ public class GestionarLocales extends JFrame {
                     }
 
                 }
-//listaLocales.getSelectedIndex() //Devuelve el indice seleccionado
+
                 if (!esta) { //Si no está se agrega
                     Local localNuevo = new Local(num, tipoContrato, nombre);
                     Local.locales.add(localNuevo);
@@ -182,7 +192,7 @@ public class GestionarLocales extends JFrame {
                 limpiar();
                 actualizar();
 
-                //JOptionPane.asdasda //Mostrar mensajito
+               
             }
         });
 
@@ -215,7 +225,7 @@ public class GestionarLocales extends JFrame {
                     }
                 }
 
-                //Sleccionar en el combobox el propietario
+               
             }
         });
 
@@ -227,6 +237,13 @@ public class GestionarLocales extends JFrame {
             }
         });
     }
+    
+    //fin Constructor Gestionar Locales
+    
+    
+    /**
+     * Este metodo recorre la Lista locales y los agrega para visualizarlos en el JList
+     */
 
     void actualizar() {
         DefaultListModel model = new DefaultListModel();
@@ -236,6 +253,10 @@ public class GestionarLocales extends JFrame {
         }
         listaLocales.setModel(model);
     }
+    
+    /**
+     * Este metodo deja en blanco los TextBox
+     */
 
     void limpiar() {
         textoNumeroLocal.setText("");

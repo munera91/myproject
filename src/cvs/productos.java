@@ -170,10 +170,11 @@ public class productos extends JFrame {
             }
         });
         panelproductos.add(botonatras);
+        
 
     }
 
-    void TraerProductos(ArrayList<Producto> productos) {
+    private void TraerProductos(ArrayList<Producto> productos) {
         panelbusquedaProductos.removeAll();
 
         int i;

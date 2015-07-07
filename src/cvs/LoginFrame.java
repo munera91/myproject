@@ -1,7 +1,6 @@
 package cvs;
 
 import java.awt.Color;
-import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -20,6 +19,12 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
+
+/**
+ * Formulario Login Frame, autentica a usuarios, administradores y propietarios de locales. 
+ * @author Camilo Munera
+ * @version 05/04/2015
+ */
 
 public class LoginFrame extends JFrame {
 
@@ -102,6 +107,8 @@ public class LoginFrame extends JFrame {
 //            }
 //        });
 //        add(labelRegistrar);
+        
+        
         botonIngresar = new JButton("Ingresar");
         add(botonIngresar);
         botonIngresar.addActionListener(new ActionListener() {
@@ -166,6 +173,12 @@ public class LoginFrame extends JFrame {
         });
 
     }
+    
+    /**
+     * metodo ingresar verifica si la informacion ingresada es de un administrador
+     * propietario de local o usuario y lo redirecciona a la ventana correspondiente
+     * segun su rol
+     */
 
     void ingresar() {
 
