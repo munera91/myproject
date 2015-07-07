@@ -1,7 +1,5 @@
 package cvs;
 
-import java.util.ArrayList;
-
 public class Producto {
 
     String foto;
@@ -10,7 +8,7 @@ public class Producto {
     String precioproducto;
     String Categoria;
 
-    public static ArrayList<Producto> Productos = new ArrayList<>();
+    public static lista<Producto> Productos = new lista<>();
 
     public Producto(String foto, String nombreproducto, String descripcionproducto,String Categoria, String precioproducto) {
         this.foto = foto;

@@ -291,10 +291,10 @@ public final class Gestionproductos extends JFrame {
 
     private void pegarProductos() {
         panelDerecho.removeAll();
-        ArrayList<Producto> productos = Producto.Productos;
+        lista<Producto> productos = Producto.Productos;
         for (int i = 0; i < productos.size(); i++) {
-            System.out.println(productos.get(i).nombreproducto);
-            JPanel panel = new ProductoInfoPanel(productos.get(i), this);
+            System.out.println(productos.get(i).info.nombreproducto);
+            JPanel panel = new ProductoInfoPanel(productos.get(i).info, this);
             panelDerecho.add(panel);
             panel.setBounds(0, i * 150, panelDerecho.getWidth(), 150);
 

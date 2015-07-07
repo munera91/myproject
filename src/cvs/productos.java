@@ -82,11 +82,11 @@ public class productos extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                ArrayList<Producto> productosenc = new ArrayList<>();
+                lista<Producto> productosenc = new lista<>();
                 for (int i = 0; i < Producto.Productos.size(); i++) {
-                    if (Producto.Productos.get(i).nombreproducto.toLowerCase().contains(textobuscar.getText().toLowerCase())
-                            || Producto.Productos.get(i).descripcionproducto.toLowerCase().contains(textobuscar.getText().toLowerCase())) {
-                        productosenc.add(Producto.Productos.get(i));
+                    if (Producto.Productos.get(i).info.nombreproducto.toLowerCase().contains(textobuscar.getText().toLowerCase())
+                            || Producto.Productos.get(i).info.descripcionproducto.toLowerCase().contains(textobuscar.getText().toLowerCase())) {
+                        productosenc.add(Producto.Productos.get(i).info);
 
                     }
                 }
@@ -107,11 +107,11 @@ public class productos extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                ArrayList<Producto> productosenc = new ArrayList<>();
+                lista<Producto> productosenc = new lista<>();
                 String categoria = (String) comboproductos.getSelectedItem();
                 for (int i = 0; i < Producto.Productos.size(); i++) {
-                    if (Producto.Productos.get(i).Categoria.equals(categoria)) {
-                        productosenc.add(Producto.Productos.get(i));
+                    if (Producto.Productos.get(i).info.Categoria.equals(categoria)) {
+                        productosenc.add(Producto.Productos.get(i).info);
 
                     }
                 }
@@ -174,12 +174,12 @@ public class productos extends JFrame {
 
     }
 
-    private void TraerProductos(ArrayList<Producto> productos) {
+    private void TraerProductos(lista<Producto> productos) {
         panelbusquedaProductos.removeAll();
 
         int i;
         for (i = 0; i < productos.size(); i++) {
-            JPanel panelp = new ProductoInfoPanel(productos.get(i), null);
+            JPanel panelp = new ProductoInfoPanel(productos.get(i).info, null);
             panelp.setBounds(80, i * 150, 400, 150);
             panelbusquedaProductos.add(panelp);
 
