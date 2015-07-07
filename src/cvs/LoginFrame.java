@@ -28,14 +28,14 @@ import javax.swing.border.Border;
 
 public class LoginFrame extends JFrame {
 
-    JLabel labelBienvenido;
-    JLabel labelCorreo;
-    JLabel labelContrasena;
-    JLabel labelRegistrar;
-    JTextField textoCorreo;
-    JPasswordField textoContrasena;
-    JButton botonIngresar;
-    JButton botonAtras;
+    private JLabel labelBienvenido;
+    private JLabel labelCorreo;
+    private JLabel labelContrasena;
+    private JLabel labelRegistrar;
+    private JTextField textoCorreo;
+    private JPasswordField textoContrasena;
+    private JButton botonIngresar;
+    private JButton botonAtras;
 
     public LoginFrame() {
         setTitle("Acceso al sistema");
@@ -180,7 +180,7 @@ public class LoginFrame extends JFrame {
      * segun su rol
      */
 
-    void ingresar() {
+    private void ingresar() {
 
         String correo = textoCorreo.getText();
         String pass = textoContrasena.getText();

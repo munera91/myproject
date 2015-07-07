@@ -11,6 +11,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+/**
+ * ventana de acceso principal al sistema
+ * @author Camilo Munera
+ * @version 05/04/2015
+ */
+
 public class PrincipalWindow extends JFrame {
 
     JButton botonregistrar;
@@ -415,7 +421,7 @@ public class PrincipalWindow extends JFrame {
     public static void main(String[] args) {
 
         
-                
+        // se agregan dos productos para que se carguen al abrir la ventana productos por defecto        
         Producto.Productos.add(new Producto("C:\\aimages\\zapatodama.jpg", "Zapatos Dama", "Color Rosa", "Ropa", "50.000"));
         Producto.Productos.add(new Producto("C:\\aimages\\camisa.jpg", "Camisa Hombre", "Color Blanco Azul, Tallas M,L", "Ropa", "25.000"));
         

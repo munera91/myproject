@@ -30,24 +30,24 @@ import javax.swing.event.ListSelectionListener;
 
 public class GestionarLocales extends JFrame {
 
-    JPanel panelIzquierdo, panelDerecho;
-    JLabel labellistadodelocales;
-    JButton botoneliminarlocal;
-    JButton botonatras;
-    JButton botonlistarlocales;
-    JLabel crearlocal;
-    JLabel seleccionarlocal;
-    JLabel propietarioactual;
-    JLabel tipodecontrato;
-    JLabel nombredelocal;
-    JTextField textoNumeroLocal;
-    JComboBox<Propietario> comboPropietarioactual;
-    JComboBox<String> combotipodecontrato;
-    JTextField textonombredelocal;
-    JButton botonguardar;
-    JButton botonsalir;
-    JList<Local> listaLocales;
-    JScrollPane panelScroll;
+    private JPanel panelIzquierdo, panelDerecho;
+    private JLabel labellistadodelocales;
+    private JButton botoneliminarlocal;
+    private JButton botonatras;
+    private JButton botonlistarlocales;
+    private JLabel crearlocal;
+    private JLabel seleccionarlocal;
+    private JLabel propietarioactual;
+    private JLabel tipodecontrato;
+    private JLabel nombredelocal;
+    private JTextField textoNumeroLocal;
+    private JComboBox<Propietario> comboPropietarioactual;
+    private JComboBox<String> combotipodecontrato;
+    private JTextField textonombredelocal;
+    private JButton botonguardar;
+    private JButton botonsalir;
+    private JList<Local> listaLocales;
+    private JScrollPane panelScroll;
     
     /**
      * Constructor Gestionar Locales
@@ -245,7 +245,7 @@ public class GestionarLocales extends JFrame {
      * Este metodo recorre la Lista locales y los agrega para visualizarlos en el JList
      */
 
-    void actualizar() {
+    private void actualizar() {
         DefaultListModel model = new DefaultListModel();
         for (int i = 0; i < Local.locales.size(); i++) { //Recorrer todo los locales
             Local local = Local.locales.get(i).info;
@@ -258,7 +258,7 @@ public class GestionarLocales extends JFrame {
      * Este metodo deja en blanco los TextBox
      */
 
-    void limpiar() {
+    private void limpiar() {
         textoNumeroLocal.setText("");
         textonombredelocal.setText("");
     }

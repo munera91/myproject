@@ -27,22 +27,22 @@ import javax.swing.table.DefaultTableModel;
 
 public class GestionarPropietarios extends JFrame {
 
-    JScrollPane panelArriba;
-    JPanel panelAbajo;
-    JLabel labelagregaroeditarprop;
-    JTextField textoagregarpropietario;
-    JLabel labelcedula;
-    JTextField textocedula;
-    JLabel labelcelular;
-    JTextField textocelular;
-    JTextField textopass;
-    JButton botonguardar;
-    JButton botoneditar;
-    JButton botoneliminar;
-    JButton botonactualizar;
-    JButton botonatras;
-    JButton botonsalir;
-    JTable tabla;
+    private JScrollPane panelArriba;
+    private JPanel panelAbajo;
+    private JLabel labelagregaroeditarprop;
+    private JTextField textoagregarpropietario;
+    private JLabel labelcedula;
+    private JTextField textocedula;
+    private JLabel labelcelular;
+    private JTextField textocelular;
+    private JTextField textopass;
+    private JButton botonguardar;
+    private JButton botoneditar;
+    private JButton botoneliminar;
+    private JButton botonactualizar;
+    private JButton botonatras;
+    private JButton botonsalir;
+    private JTable tabla;
 
     public GestionarPropietarios() {
         setTitle("Gestionar Propietarios");
@@ -269,7 +269,7 @@ public class GestionarPropietarios extends JFrame {
         tabla.setModel(new DefaultTableModel(datos, encabezados));
     }
 
-    void borrartodo() {
+    private void borrartodo() {
         textoagregarpropietario.setText("");
         textocedula.setText("");
         textocelular.setText("");

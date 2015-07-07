@@ -31,27 +31,27 @@ import javax.swing.JTextField;
  */
 public final class Gestionproductos extends JFrame {
 
-    JPanel panelIzquierdo, panelDerecho, panelproducto1, panelproducto2, panelproducto3;
-    JButton botonatras;
+    private JPanel panelIzquierdo, panelDerecho, panelproducto1, panelproducto2, panelproducto3;
+    private JButton botonatras;
     JButton botonguardar;
-    JButton botonsalir;
-    JScrollPane panelScroll;
-    JLabel labelproducto;
+    private JButton botonsalir;
+    private JScrollPane panelScroll;
+    private JLabel labelproducto;
     JTextField textoproducto;
-    JLabel labeldescripcionproducto;
-    JLabel labelimagen;
+    private JLabel labeldescripcionproducto;
+    private JLabel labelimagen;
     JButton botoncargar;
     JTextField textodescripcion;
-    JLabel labeldescripcionproducto1;
-    String rutafoto;
-    JLabel labelprecioproducto;
+    private JLabel labeldescripcionproducto1;
+    private String rutafoto;
+    private JLabel labelprecioproducto;
     JTextField textoprecioproducto;
     JComboBox<String> comboCategoria;
-    JLabel labelcategoria;
-    JLabel nombrepropietario;
+    private JLabel labelcategoria;
+    private JLabel nombrepropietario;
     Producto productoEdicion = null;
-    JLabel labelbienvenido;
-    JLabel labelcerrarsesion;
+    private JLabel labelbienvenido;
+    private JLabel labelcerrarsesion;
 
     public Gestionproductos() {
         setTitle("Gestion de Productos");
@@ -243,7 +243,7 @@ public final class Gestionproductos extends JFrame {
      *  Este void me permite cargar las imagenes al crear o editar los productos
      */
     
-    void CargarFotografias() {
+    private void CargarFotografias() {
         JFileChooser selector = new JFileChooser();
         int estado = selector.showOpenDialog(null);
         File archivoelegido = selector.getSelectedFile();
@@ -261,7 +261,7 @@ public final class Gestionproductos extends JFrame {
      * Void Guardar almacena o edita los productos en la lista Productos
      */
 
-    void Guardar() {
+    private void Guardar() {
         String nombreproducto = textoproducto.getText();
         String descripproducto = textodescripcion.getText();
         String precioproducto = textoprecioproducto.getText();
@@ -289,7 +289,7 @@ public final class Gestionproductos extends JFrame {
      * los productos que hay en la lista Productos
      */
 
-    void pegarProductos() {
+    private void pegarProductos() {
         panelDerecho.removeAll();
         ArrayList<Producto> productos = Producto.Productos;
         for (int i = 0; i < productos.size(); i++) {
@@ -306,13 +306,13 @@ public final class Gestionproductos extends JFrame {
      * borrartodo, pone todos los campos en blanco
      */
 
-    void borrartodo() {
+    private void borrartodo() {
         textoproducto.setText("");
         textodescripcion.setText("");
         textoprecioproducto.setText("$ ");
     }
 
-    void editar() {
+    private void editar() {
         textoproducto.setText("");
         textodescripcion.setText("");
         textoprecioproducto.setText("$ ");

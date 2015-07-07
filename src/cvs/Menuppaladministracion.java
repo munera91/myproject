@@ -1,11 +1,8 @@
 package cvs;
 
-import java.awt.Cursor;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.font.TextAttribute;
 import java.util.Map;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -19,12 +16,12 @@ import javax.swing.border.Border;
 
 public class Menuppaladministracion extends JFrame {
 
-    JLabel labelBienvenido;
-    JLabel labelGestionarlocales;
-    JLabel labelAdministrarpropietarios;
-    JLabel labelGestionarEvento;
-    JLabel labelcambiarpassword;
-    JButton botonAtras;
+    private JLabel labelBienvenido;
+    private JLabel labelGestionarlocales;
+    private JLabel labelAdministrarpropietarios;
+    private JLabel labelGestionarEvento;
+    private JLabel labelcambiarpassword;
+    private JButton botonAtras;
 
     public Menuppaladministracion() {
 
