@@ -5,6 +5,10 @@ import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
+/**
+ * La clase panel imagen establece el fondo del Login
+ * @author Camilo Munera
+ */
 
 public class PanelImagen2 extends JPanel {
     

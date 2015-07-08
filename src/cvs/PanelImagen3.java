@@ -5,6 +5,10 @@ import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
+/**
+ * La clase panel imagen establece el fondo de la ventana productos
+ * @author Camilo Munera
+ */
 
 public class PanelImagen3 extends JPanel {
     

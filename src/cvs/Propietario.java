@@ -1,5 +1,11 @@
 package cvs;
 
+/**
+ * Esta Clase almacena los propietarios de locales, los propietarios son almacenados
+ * en la lista propietarios
+ * @author Santiago Llano
+ */
+
 class Propietario {
 
     String cedula;
@@ -32,6 +38,14 @@ class Propietario {
         }
         return null;
     }
+    
+    /**
+     * boolean loguear propietario, si el usuario y la contraseña ingresados en el login frame coicide con los elementos
+     * de la lista propietarios se loguea el propietario
+     * @param correo (Es el correo electronico asignado al momento de crear el propietario)
+     * @param contrasena
+     * @return 
+     */
     
     public static boolean loguearpropietario(String correo, String contrasena) {
         for (int i = 0; i < propietarios.size(); i++) {

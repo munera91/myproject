@@ -5,6 +5,10 @@ import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
+/**
+ * La clase panel imagen establece el fondo de la ventana prductos 2
+ * @author Camilo Munera
+ */
 
 public class PanelImagen31 extends JPanel {
     

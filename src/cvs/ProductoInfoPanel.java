@@ -11,6 +11,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * en esta clase se crea el mini panel visualizado en la pestaña productos, se crea
+ * un panel por cada producto
+ * @author Camilo Munera
+ */
+
 public class ProductoInfoPanel extends JPanel {
 
     public ProductoInfoPanel(Producto p, Gestionproductos gp) {
@@ -88,6 +94,11 @@ public class ProductoInfoPanel extends JPanel {
         });
 
     }
+    
+    /**
+     * establece el fondo de pantalla
+     * @param g redimensiona la imagen al tamaño de la pantalla
+     */
 
     public void paintComponent(Graphics g) {
 

@@ -1,5 +1,13 @@
 package cvs;
 
+/**
+ * Clase lista es una lista generica que almacena los tipos de datos necesarios del proyecto
+ * en la lista se incluyen las funciones necesarias para el funcionamiento del proyecto como
+ * agregar un nodo, eliminar un nodo, editar los datos de un nodo.
+ * @author Camilo Munera
+ * @param <T> puede ser cualquier dato a almacenar (Productos, Propietarios, usuarios, Locales)
+ */
+
 public class lista<T> {
 
     public Nodo<T> cab, cola, actual;

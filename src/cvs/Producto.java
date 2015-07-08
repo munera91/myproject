@@ -1,5 +1,11 @@
 package cvs;
 
+/**
+ * en esta clase se almacenan todos los productos, el almacenamiento se realiza
+ * en la lista productos
+ * @author Camilo Munera
+ */
+
 public class Producto {
 
     String foto;

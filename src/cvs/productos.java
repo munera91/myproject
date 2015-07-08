@@ -5,19 +5,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.File;
-import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+
+/**
+ * En esta clase los clientes visualizan los productos de todos los locales
+ * @author Camilo Munera
+ * @version 05/07/2015
+ */
 
 public class productos extends JFrame {
 
@@ -173,6 +175,11 @@ public class productos extends JFrame {
         
 
     }
+    
+    /**
+     * void Traerproductos agrega los productos que hay en la lista productos
+     * @param productos 
+     */
 
     private void TraerProductos(lista<Producto> productos) {
         panelbusquedaProductos.removeAll();

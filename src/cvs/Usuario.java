@@ -1,5 +1,12 @@
 package cvs;
 
+/**
+ * Esta Clase almacena los usuarios clientes del sistema, los usuarios son almacenados
+ * en una lista llamada usuarios
+ * @author Victor Dorado
+ * @version 08/04/2015
+ */
+
 class Usuario {
 
     String tipoDocumento;
@@ -29,6 +36,14 @@ class Usuario {
         this.genero = genero;
         this.contrasena = contrasena;
     }
+    
+    /**
+     * Si el usuario y la contraseña ingresador en el login frame coinciden con los datos almacenados
+     * en la lista usuarios se loguea el usuario
+     * @param correo
+     * @param contrasena
+     * @return retorna verdadero si el usuario fue logueado o falso si el usuario es incorrecto o no se encuentra
+     */
 
     public static boolean loguearUsuario(String correo, String contrasena) {
         for (int i = 0; i < usuarios.size(); i++) {
