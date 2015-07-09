@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Map;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -34,12 +35,13 @@ public class PrincipalWindow extends JFrame {
     JLabel labelsobrelocales;
     JLabel labelcerrarsesion;
     JLabel labelusuario;
+    JLabel logo;
 
     public PrincipalWindow(boolean editando) {
 
         setTitle("Acceso al sistema");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-
+        setIconImage(new ImageIcon(getClass().getResource("/cvs/icon.png")).getImage());
         setSize(800, 600);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -56,6 +58,10 @@ public class PrincipalWindow extends JFrame {
         p.setBounds(0, 0, getWidth(), getHeight());
         add(p);
         
+//        logo = new JLabel();
+//        logo.setIcon(new ImageIcon(getClass().getResource("/cvs/logo.gif")));
+//        logo.setBounds(189, -10, 400, 300);
+//        p.add(logo);
         
 
         botonregistrar = new JButton("Registrarse");
@@ -412,7 +418,7 @@ public class PrincipalWindow extends JFrame {
             
         }
         
-       
+     
         
     }
 
@@ -422,8 +428,8 @@ public class PrincipalWindow extends JFrame {
 
         
         // se agregan dos productos para que se carguen al abrir la ventana productos por defecto        
-        Producto.Productos.add(new Producto("C:\\aimages\\zapatodama.jpg", "Zapatos Dama", "Color Rosa", "Ropa", "50.000"));
-        Producto.Productos.add(new Producto("C:\\aimages\\camisa.jpg", "Camisa Hombre", "Color Blanco Azul, Tallas M,L", "Ropa", "25.000"));
+        Producto.Productos.add(new Producto("C:\\aimages\\zapatodama.gif", "Zapatos Dama", "Color Rosa", "Ropa", "50.000"));
+        Producto.Productos.add(new Producto("C:\\aimages\\camisa.gif", "Camisa Hombre", "Color Blanco Azul, Tallas M,L", "Ropa", "25.000"));
         
         
         PrincipalWindow f = new PrincipalWindow(false);

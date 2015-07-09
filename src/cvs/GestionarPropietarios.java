@@ -49,9 +49,8 @@ public class GestionarPropietarios extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(800, 600);
         setLocationRelativeTo(null);
-        setVisible(true);
-        ImageIcon icono = new ImageIcon("../Ressources/icon.png");
-        this.setIconImage(icono.getImage());
+        setVisible(true);        
+        setIconImage(new ImageIcon(getClass().getResource("/cvs/icon.png")).getImage());
 
         Container contentpane = getContentPane();
         contentpane.setLayout(new GridLayout(2, 1));

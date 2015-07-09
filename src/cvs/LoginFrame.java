@@ -11,6 +11,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Map;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -21,17 +22,17 @@ import javax.swing.JTextField;
 import javax.swing.border.Border;
 
 /**
- * Formulario Login Frame, autentica a usuarios, administradores y propietarios de locales. 
+ * Formulario Login Frame, autentica a usuarios, administradores y propietarios
+ * de locales.
+ *
  * @author Camilo Munera
  * @version 05/04/2015
  */
-
 public class LoginFrame extends JFrame {
 
     private JLabel labelBienvenido;
     private JLabel labelCorreo;
     private JLabel labelContrasena;
-    private JLabel labelRegistrar;
     private JTextField textoCorreo;
     private JPasswordField textoContrasena;
     private JButton botonIngresar;
@@ -43,6 +44,7 @@ public class LoginFrame extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
         setVisible(true);
+        setIconImage(new ImageIcon(getClass().getResource("/cvs/icon.png")).getImage());
 
         JPanel PLogin = new PanelImagen2();
         Border padding = BorderFactory.createEmptyBorder(60, 280, 60, 280);
@@ -74,41 +76,6 @@ public class LoginFrame extends JFrame {
         textoContrasena = new JPasswordField();
         add(textoContrasena);
 
-//        labelRegistrar = new JLabel("<HTML><U>Registrarse<U></HTML>");
-//        labelRegistrar.setHorizontalAlignment(JTextField.CENTER);
-//        labelRegistrar.setForeground(Color.BLUE);
-//        labelRegistrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));//para poner mano
-//        labelRegistrar.addMouseListener(new MouseListener() {
-//
-//            @Override
-//            public void mouseClicked(MouseEvent e) {
-//                new CrearUsuario(false);
-//                dispose();
-//            }
-//
-//            @Override
-//            public void mousePressed(MouseEvent e) {
-//
-//            }
-//
-//            @Override
-//            public void mouseReleased(MouseEvent e) {
-//
-//            }
-//
-//            @Override
-//            public void mouseEntered(MouseEvent e) {
-//
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e) {
-//
-//            }
-//        });
-//        add(labelRegistrar);
-        
-        
         botonIngresar = new JButton("Ingresar");
         add(botonIngresar);
         botonIngresar.addActionListener(new ActionListener() {
@@ -173,13 +140,12 @@ public class LoginFrame extends JFrame {
         });
 
     }
-    
-    /**
-     * metodo ingresar verifica si la informacion ingresada es de un administrador
-     * propietario de local o usuario y lo redirecciona a la ventana correspondiente
-     * segun su rol
-     */
 
+    /**
+     * metodo ingresar verifica si la informacion ingresada es de un
+     * administrador propietario de local o usuario y lo redirecciona a la
+     * ventana correspondiente segun su rol
+     */
     private void ingresar() {
 
         String correo = textoCorreo.getText();
@@ -191,7 +157,7 @@ public class LoginFrame extends JFrame {
         } else if (Usuario.loguearUsuario(correo, pass)) {
             new PrincipalWindow(true);
             dispose();
-        } else if (Propietario.loguearpropietario(correo, pass))  {
+        } else if (Propietario.loguearpropietario(correo, pass)) {
             new Gestionproductos();
             dispose();
         } else {

@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
@@ -51,8 +52,8 @@ public class CrearUsuario extends JFrame {
     private JButton botonreestablecer;
     private JButton botonatras;
     private JButton botoneliminar;
-    private JComboBox combo1;
-    private boolean editando;
+
+    boolean editando;
 
     /**
      * Constructor Crear Usuario
@@ -60,6 +61,7 @@ public class CrearUsuario extends JFrame {
      * @param editando si editando es true es porque el usuario ya existe y los
      * datos seran modificados, si es false se crea un nuevo usuario.
      */
+    
     public CrearUsuario(boolean editando) {
         if (editando == true) {
             setTitle("Modificar mis Datos");
@@ -70,6 +72,7 @@ public class CrearUsuario extends JFrame {
 
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE); //Que hacer cuando se presiona el boton cerrar
+        setIconImage(new ImageIcon(getClass().getResource("/cvs/icon.png")).getImage());
         this.editando = editando;
 
         setSize(800, 600);
@@ -151,6 +154,7 @@ public class CrearUsuario extends JFrame {
         add(botoncrearusuario);
         botoncrearusuario.addActionListener(new ActionListener() {
 
+            @Override
             public void actionPerformed(ActionEvent e) {
 
                 String tipoDocumento = (String) comboTipodocumento.getSelectedItem();

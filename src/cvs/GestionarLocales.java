@@ -31,7 +31,6 @@ import javax.swing.event.ListSelectionListener;
 public class GestionarLocales extends JFrame {
 
     private JPanel panelIzquierdo, panelDerecho;
-    private JLabel labellistadodelocales;
     private JButton botoneliminarlocal;
     private JButton botonatras;
     private JButton botonlistarlocales;
@@ -62,9 +61,8 @@ public class GestionarLocales extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
         setVisible(true);
-        ImageIcon icono = new ImageIcon("../Ressources/icon.png");
-        this.setIconImage(icono.getImage());
-
+        setIconImage(new ImageIcon(getClass().getResource("/cvs/icon.png")).getImage());
+        
         Container contentpane = getContentPane();
         contentpane.setLayout(new GridLayout(1, 2));
 
@@ -115,6 +113,7 @@ public class GestionarLocales extends JFrame {
             @Override
             public void actionPerformed(ActionEvent ev) {
                 new Menuppaladministracion();
+                dispose();
 
             }
         });

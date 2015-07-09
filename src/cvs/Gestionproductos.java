@@ -8,8 +8,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Map;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
@@ -59,6 +59,7 @@ public final class Gestionproductos extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
         setVisible(true);
+        setIconImage(new ImageIcon(getClass().getResource("/cvs/icon.png")).getImage());
 
         Container contentpane = getContentPane();
 
