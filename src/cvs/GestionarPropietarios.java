@@ -120,6 +120,7 @@ public class GestionarPropietarios extends JFrame {
             @Override
             public void mouseClicked(MouseEvent ev) {
                 new Menuppaladministracion();
+                dispose();
 
             }
 

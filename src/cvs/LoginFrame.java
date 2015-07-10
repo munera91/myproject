@@ -94,6 +94,7 @@ public class LoginFrame extends JFrame {
             @Override
             public void mouseClicked(MouseEvent ev) {
                 new PrincipalWindow(false);
+                dispose();
 
             }
 

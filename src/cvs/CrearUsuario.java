@@ -94,19 +94,19 @@ public class CrearUsuario extends JFrame {
         comboTipodocumento.addItem("Pasaporte");
         add(comboTipodocumento);
 
-        labeldocumento = new JLabel("Documento");
+        labeldocumento = new JLabel("* Documento");
         add(labeldocumento);
 
         textoDocumento = new JTextField();
         add(textoDocumento);
 
-        labelapellidos = new JLabel("Apellidos");
+        labelapellidos = new JLabel("* Apellidos");
         add(labelapellidos);
 
         textoApellidos = new JTextField();
         add(textoApellidos);
 
-        labelnombre = new JLabel("Nombre");
+        labelnombre = new JLabel("* Nombre");
         add(labelnombre);
 
         textoNombre = new JTextField();
@@ -124,7 +124,7 @@ public class CrearUsuario extends JFrame {
         textoCelular = new JTextField();
         add(textoCelular);
 
-        labelmail = new JLabel("Correo Electronico");
+        labelmail = new JLabel("* Correo Electronico");
         add(labelmail);
 
         textoMail = new JTextField();
@@ -138,13 +138,13 @@ public class CrearUsuario extends JFrame {
         comboGenero.addItem("Femenino");
         add(comboGenero);
 
-        labelpass = new JLabel("Contraseña");
+        labelpass = new JLabel("* Contraseña");
         add(labelpass);
 
         textoPass = new JPasswordField();
         add(textoPass);
 
-        labelconfirmarpass = new JLabel("Confirmar Contraseña");
+        labelconfirmarpass = new JLabel("* Confirmar Contraseña");
         add(labelconfirmarpass);
 
         textoConfirmarpass = new JPasswordField();
@@ -217,6 +217,8 @@ public class CrearUsuario extends JFrame {
                 }
             }
         });
+        
+        if (!editando){
 
         botonreestablecer = new JButton("Reestablecer");
         add(botonreestablecer);
@@ -235,6 +237,7 @@ public class CrearUsuario extends JFrame {
 
             }
         });
+        }
 
         botonatras = new JButton("Atras");
         add(botonatras);

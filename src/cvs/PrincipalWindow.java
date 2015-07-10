@@ -58,13 +58,14 @@ public class PrincipalWindow extends JFrame {
         p.setBounds(0, 0, getWidth(), getHeight());
         add(p);
         
-//        logo = new JLabel();
-//        logo.setIcon(new ImageIcon(getClass().getResource("/cvs/logo.gif")));
-//        logo.setBounds(189, -10, 400, 300);
-//        p.add(logo);
+        logo = new JLabel();
+        logo.setIcon(new ImageIcon(getClass().getResource("/cvs/logo.gif")));
+        logo.setBounds(189, -10, 400, 300);
+        p.add(logo);
         
 
         botonregistrar = new JButton("Registrarse");
+        botonregistrar.setIcon(new ImageIcon("/cvs/botoneventos.png")); 
         botonregistrar.setBounds(130, 230, 120, 40);
         botonregistrar.addMouseListener(new MouseListener() {
 
@@ -341,7 +342,7 @@ public class PrincipalWindow extends JFrame {
 
             @Override
             public void mouseClicked(MouseEvent e) {
-                new eventosdelsitio();
+                new comentarios();
                 dispose();
             }
 
@@ -418,7 +419,7 @@ public class PrincipalWindow extends JFrame {
             
         }
         
-     
+     p.repaint();
         
     }
 
@@ -430,7 +431,7 @@ public class PrincipalWindow extends JFrame {
         // se agregan dos productos para que se carguen al abrir la ventana productos por defecto        
         Producto.Productos.add(new Producto("C:\\aimages\\zapatodama.gif", "Zapatos Dama", "Color Rosa", "Ropa", "50.000"));
         Producto.Productos.add(new Producto("C:\\aimages\\camisa.gif", "Camisa Hombre", "Color Blanco Azul, Tallas M,L", "Ropa", "25.000"));
-        
+        Usuario.usuarios.add(new Usuario("CC", 1036716383, "Perez" , "Pepito", 3500028, 315372832,"pepito@hotmail.com" , "Masculino", "12345678"));
         
         PrincipalWindow f = new PrincipalWindow(false);
         
