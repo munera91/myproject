@@ -25,6 +25,7 @@ public class comentarios extends JFrame {
     JLabel labeldescripcion;
     JTextField textodescripcion;
     JButton botonenviar;
+    JButton botonatras;
 
     public comentarios() {
 
@@ -123,6 +124,34 @@ public class comentarios extends JFrame {
             }
         });
         panelcomentarios.add(botonenviar);
+        
+        botonatras =new JButton("Atras");
+        botonatras.setBounds(120, 470, 160, 30);
+        botonatras.addMouseListener(new MouseListener() {
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                new PrincipalWindow(true);
+                dispose();
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            }
+        });
+        panelcomentarios.add(botonatras);
 
     }
 
